@@ -1,0 +1,13 @@
+xz-utils
+ssh
+wget
+curl
+cloud-init
+linux-base
+apt-transport-https
+iputils-ping
+squashfs-tools
+kbd
+keyboard-configuration
+locales
+console-setup

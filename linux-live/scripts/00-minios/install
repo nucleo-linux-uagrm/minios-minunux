@@ -1,0 +1,83 @@
+#!/bin/bash
+
+set -e          # exit on error
+set -o pipefail # exit on pipeline error
+set -u          # treat unset variable as error
+
+. /minioslib || exit 1
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+cat <<EOF >/usr/lib/systemd/system/minios-syncconfig.path
+[Unit]
+Description=Watch /etc/minios/minios.conf for changes
+
+[Path]
+PathModified=/etc/minios/minios.conf
+
+[Install]
+WantedBy=multi-user.target
+
+EOF
+
+if [ $INITRD_TYPE = "uird" ]; then
+    cat <<EOF >/usr/lib/systemd/system/minios-syncconfig.service
+[Unit]
+Description=Sync minios.conf changes
+
+[Service]
+Type=oneshot
+ExecStart=-/bin/sh -c "if [ -f /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ] && [ -w /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ]; then cp -fp /etc/$LIVEKITNAME/$LIVEKITNAME.conf /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf; fi; sync"
+
+[Install]
+RequiredBy=minios-syncconfig.path
+
+EOF
+elif [ $INITRD_TYPE = "livekit-mos" ] || [ $INITRD_TYPE = "livekit-slax" ]; then
+    cat <<EOF >/usr/lib/systemd/system/minios-syncconfig.service
+[Unit]
+Description=Sync minios.conf changes
+
+[Service]
+Type=oneshot
+ExecStart=-/bin/sh -c "if [ -f /run/initramfs/memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ] && [ -w /run/initramfs/memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ]; then cp -fp /etc/$LIVEKITNAME/$LIVEKITNAME.conf /run/initramfs/memory/data/$LIVEKITNAME/$LIVEKITNAME.conf; fi; sync"
+
+[Install]
+RequiredBy=minios-syncconfig.path
+
+EOF
+fi
+
+systemctl enable minios-startup.service
+#systemctl enable minios-shutdown.service
+if [ -f /usr/lib/systemd/system/minios-syncconfig.service ]; then
+    systemctl enable minios-syncconfig.path
+    systemctl enable minios-syncconfig.service
+fi
+#systemctl enable minios-script-launcher.service
+
+if [ $PACKAGE_VARIANT = "cloud" ] || [[ $DESKTOP_ENVIRONMENT == *"rdp-kiosk"* ]]; then
+    if [ -d /usr/share/minios/html ]; then
+        rm -rf /usr/share/minios/html
+    fi
+fi
+
+if [ -d /etc/NetworkManager ]; then
+    if [ ! -d /etc/NetworkManager/dispatcher.d ]; then
+        mkdir -p /etc/NetworkManager/dispatcher.d
+    fi
+fi
+if [ -d /etc/NetworkManager/dispatcher.d ]; then
+    cat <<'EOF' >/etc/NetworkManager/dispatcher.d/09-timedate
+#!/bin/sh
+case "$2" in
+    up)
+        sleep 3
+        timedatectl set-local-rtc 0
+        timedatectl set-ntp true
+        timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"
+    ;;
+esac
+EOF
+    chmod +x /etc/NetworkManager/dispatcher.d/09-timedate
+fi

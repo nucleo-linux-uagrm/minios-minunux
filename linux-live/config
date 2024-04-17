@@ -1,0 +1,26 @@
+#!/bin/bash
+# This is a config file for Linux Live Kit build script.
+# You shouldn't need to change anything expect LIVEKITNAME
+
+# Live Kit Name. Defaults to 'linux';
+# This will be the name of the directory created on your CD/USB, which
+# will contain everything including boot files and such.
+# For example, MiniOS changes it to 'minios'
+# Must not contain any spaces.
+LIVEKITNAME="minios"
+
+# If you require network support in initrd, for example to boot over
+# PXE or to load data using 'from' boot parameter from a http server,
+# you will need network modules included in your initrd.
+# This is disabled by default since most people won't need it.
+# To enable, set to true
+NETWORK="true"
+
+# If you need support for VM drivers at boot time (QEMU KVM, VMware
+# ESXi), you can enable it here.
+# This is disabled by default since most people won't need it.
+# To enable, set to true
+#CLOUD=false
+
+# Bundle extension, for example 'sb' for .sb extension
+BEXT="sb"

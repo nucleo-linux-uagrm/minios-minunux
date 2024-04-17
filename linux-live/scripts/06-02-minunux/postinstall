@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# remove categorie science from spyder
+sed -i 's/Science;//' /usr/share/applications/spyder.desktop

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e          # exit on error
+set -o pipefail # exit on pipeline error
+set -u          # treat unset variable as error
+
+. /minioslib || exit 1
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+pkg update
+
+# install packages
+if [ -f $SCRIPT_DIR/package.list ]; then
+    install_packages
+fi
+
+# install eclipse ide
+wget -q --show-progress "https://github.com/FershoUno/packages/releases/download/v1.0.0/eclipse-ide-gtk-2023-12-R_amd64.deb"
+pkg install ./eclipse-ide-gtk-2023-12-R_amd64.deb -y
+rm -f eclipse-ide-gtk-2023-12-R_amd64.deb

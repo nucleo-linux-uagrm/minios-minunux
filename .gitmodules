@@ -1,0 +1,31 @@
+[submodule "submodules/elementary-xfce-minios"]
+	path = submodules/elementary-xfce-minios
+	url = https://github.com/minios-linux/elementary-xfce-minios.git
+	branch = master
+[submodule "submodules/aufs-kernel"]
+	path = submodules/aufs-kernel
+	url = https://github.com/minios-linux/aufs-kernel.git
+	branch = main
+[submodule "submodules/packages"]
+	path = submodules/packages
+	url = https://github.com/minios-linux/packages.git
+	branch = master
+[submodule "submodules/rescuezilla"]
+	path = submodules/rescuezilla
+	url = https://github.com/minios-linux/rescuezilla.git
+	branch = master
+[submodule "submodules/minios-linux.github.io"]
+	path = submodules/minios-linux.github.io
+	url = https://github.com/minios-linux/minios-linux.github.io.git
+[submodule "submodules/kernelfiles"]
+	path = submodules/kernelfiles
+	url = https://github.com/minios-linux/kernelfiles.git
+[submodule "submodules/minios-live.wiki"]
+	path = submodules/minios-live.wiki
+	url = https://github.com/minios-linux/minios-live.wiki.git
+[submodule "submodules/docs"]
+	path = submodules/docs
+	url = https://github.com/minios-linux/docs.git
+[submodule "submodules/debian"]
+	path = submodules/debian
+	url = https://github.com/minios-linux/debian.git

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#. /minioslib || exit 1
+
+# Icon change Gambas3 (REMOVED)
+#sed -i 's,Icon=gambas3,Icon=/opt/minunux/icons/hicolor/256x256/apps/gambas3-ide-icon.png,' /usr/share/applications/gambas3.desktop
