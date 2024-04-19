@@ -22,34 +22,35 @@ echo \
 pkg update 
 pkg install docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-compose 
 
-get_latest_package_url() {
-    curl --silent "https://api.github.com/repos/$1/releases/latest" |           # Get latest release from GitHub api
-        grep '"browser_download_url":' | grep "$DISTRIBUTION_ARCH.tar.gz"\" | # Get tag line
-        sed -E 's/.*"([^"]+)".*/\1/'                                          # Pluck JSON value
-}
+# Portianer <<Innecesario>>
+# get_latest_package_url() {
+#     curl --silent "https://api.github.com/repos/$1/releases/latest" |           # Get latest release from GitHub api
+#         grep '"browser_download_url":' | grep "$DISTRIBUTION_ARCH.tar.gz"\" | # Get tag line
+#         sed -E 's/.*"([^"]+)".*/\1/'                                          # Pluck JSON value
+# }
 
-URL=$(get_latest_package_url portainer/portainer)
+# URL=$(get_latest_package_url portainer/portainer)
 
-wget $URL &&
-    tar -xf ./$(ls portainer*$DISTRIBUTION_ARCH.tar.gz) -C /opt &&
-    rm -f ./$(ls portainer*$DISTRIBUTION_ARCH.tar.gz)
+# wget $URL &&
+#     tar -xzvf ./$(ls portainer*$DISTRIBUTION_ARCH.tar.gz) -C /opt
+#     rm -f ./$(ls portainer*$DISTRIBUTION_ARCH.tar.gz)
 
-cat <<EOF >/usr/lib/systemd/system/portainer.service
-[Unit]
-Description=Portainer
-Wants=network-online.target
-After=network-online.target docker.service
-Requires=docker.service
+# cat <<EOF >/usr/lib/systemd/system/portainer.service
+# [Unit]
+# Description=Portainer
+# Wants=network-online.target
+# After=network-online.target docker.service
+# Requires=docker.service
 
-[Service]
-TimeoutStartSec=0
-Restart=always
-ExecStart=/opt/portainer/portainer --no-analytics -H unix:///var/run/docker.sock
-#ExecStop=
+# [Service]
+# TimeoutStartSec=0
+# Restart=always
+# ExecStart=/opt/portainer/portainer --no-analytics -H unix:///var/run/docker.sock
+# #ExecStop=
 
-[Install]
-WantedBy=multi-user.target
+# [Install]
+# WantedBy=multi-user.target
 
-EOF
+# EOF
 
-systemctl enable portainer
+# systemctl enable portainer

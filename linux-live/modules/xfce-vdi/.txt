@@ -1,9 +1,0 @@
-00-minios
-01-kernel
-02-firmware
-03-xorg
-04-xfce-desktop
-05-xfce-apps
-06-firefox
-07-icaclient
-08-bitwarden

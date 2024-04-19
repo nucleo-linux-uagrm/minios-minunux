@@ -20,20 +20,21 @@ WantedBy=multi-user.target
 
 EOF
 
-if [ $INITRD_TYPE = "uird" ]; then
-    cat <<EOF >/usr/lib/systemd/system/minios-syncconfig.service
-[Unit]
-Description=Sync minios.conf changes
+# if [ $INITRD_TYPE = "uird" ]; then
+#     cat <<EOF >/usr/lib/systemd/system/minios-syncconfig.service
+# [Unit]
+# Description=Sync minios.conf changes
 
-[Service]
-Type=oneshot
-ExecStart=-/bin/sh -c "if [ -f /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ] && [ -w /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ]; then cp -fp /etc/$LIVEKITNAME/$LIVEKITNAME.conf /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf; fi; sync"
+# [Service]
+# Type=oneshot
+# ExecStart=-/bin/sh -c "if [ -f /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ] && [ -w /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf ]; then cp -fp /etc/$LIVEKITNAME/$LIVEKITNAME.conf /memory/data/$LIVEKITNAME/$LIVEKITNAME.conf; fi; sync"
 
-[Install]
-RequiredBy=minios-syncconfig.path
+# [Install]
+# RequiredBy=minios-syncconfig.path
 
-EOF
-elif [ $INITRD_TYPE = "livekit-mos" ] || [ $INITRD_TYPE = "livekit-slax" ]; then
+#EOF
+
+if [ $INITRD_TYPE = "livekit-mos" ] || [ $INITRD_TYPE = "livekit-slax" ]; then
     cat <<EOF >/usr/lib/systemd/system/minios-syncconfig.service
 [Unit]
 Description=Sync minios.conf changes
@@ -56,11 +57,11 @@ if [ -f /usr/lib/systemd/system/minios-syncconfig.service ]; then
 fi
 #systemctl enable minios-script-launcher.service
 
-if [ $PACKAGE_VARIANT = "cloud" ] || [[ $DESKTOP_ENVIRONMENT == *"rdp-kiosk"* ]]; then
-    if [ -d /usr/share/minios/html ]; then
-        rm -rf /usr/share/minios/html
-    fi
-fi
+# if [ $PACKAGE_VARIANT = "cloud" ] || [[ $DESKTOP_ENVIRONMENT == *"rdp-kiosk"* ]]; then
+#     if [ -d /usr/share/minios/html ]; then
+#         rm -rf /usr/share/minios/html
+#     fi
+# fi
 
 if [ -d /etc/NetworkManager ]; then
     if [ ! -d /etc/NetworkManager/dispatcher.d ]; then
