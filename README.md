@@ -6,7 +6,13 @@ Desde Bolivia, este proyecto nace como una "edición no oficial" de MiniOS.
 
 ### Descarga
 
-Google Drive: [MiniOS Minunux (3GB)](https://drive.google.com/drive/folders/19-buYMEPTkR1PszPLz8qNunSbVpjPra6?usp=sharing)
+Google Drive: [MiniOS Minunux (3GB)](https://drive.google.com/drive/folders/19-buYMEPTkR1PszPLz8qNunSbVpjPra6?usp=sharing)  
+
+### Credenciales 
+    estudiante:nucleolinux
+    root:toor
+
+
 ### ¿Por qué elegimos MiniOS como base?
 
 Creemos que las tecnologías FOSS nos dan oportunidades de aprender cuando tenemos acceso al Código Fuente. MiniOS es un claro ejemplo de un proyecto que permite a los demás usuarios aprender de él y mejorarlo con contribuciones, y usar estas tecnologías para ofrecer soluciones libres.
