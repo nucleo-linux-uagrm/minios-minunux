@@ -1,57 +1,74 @@
-[![MiniOS](images/minios.png)](https://minios.dev)
+# minios-minunux  
 
-The goal of MiniOS is to provide users with a reliable user-friendly portable system with a graphical interface.
 
-These scripts build a bootable MiniOS ISO image.
 
-Using minios-live, you can build:
+## Caracteristicas  
 
-*Debian 9, 10, 11, 12 with Fluxbox environment (analogous to [Slax](https://www.slax.org/)).*
+Esta construcción cuenta con modulos importantes que estan destinados para el uso del estudiante universitario por semestre:  
 
-*Debian 9, 10, 11, 12, Testing, Unstable, Kali Linux and Ubuntu 20.04, 22.04 with Xfce4 environment.*
+    06-00-minunux-amd64-zstd.sb
+    06-01-minunux-amd64-zstd.sb
+    06-02-minunux-amd64-zstd.sb
+    06-03-minunux-amd64-zstd.sb
+    06-04-minunux-amd64-zstd.sb
+    06-05-minunux-amd64-zstd.sb
 
-To build, you need to change the parameters in the **linux-live/buildconfig** file to build the required option, then start the build: `./install -`
+### modulo 06-00  
 
-It is advisable to use Debian 12 or Ubuntu 22.04 for build, since in this system you can build MiniOS based on Debian 9,10,11,12 and Unbuntu 20.04, 22.04. If you have a different system installed, use docker.
+- RustDesk, herramienta para soporte remoto  
+- thunderbird, cliente de correo electrónico  
 
-For installation use **install** \- script for guided installation\, **autoinstall** \- script for automatic installation\.
+### modulo 06-01  
 
-**Never run scripts from linux-live folder! They will break your system.**
+- Lazarus IDE, herramienta para programar en lenguaje pascal  
+- PSeInt, herramienta para crear diagramas de flujo  
+- Dotnet y ASPnetcore, para lenguaje de C#  
 
-**Supported commands:** `setup_host build_bootstrap build_chroot build_live build_modules build_iso`
+### modulo 06-02  
 
-*setup\_host* \- installing packages required for building on the host
+- Eclipse IDE, un IDE para programar en Java  
+- Spyder IDE, para programar en Python3  
+- Umbrello, Editor de diagramas UML  
 
-*build\_bootstrap* \- install a minimal system using debootstrap
+### modulo 06-03  
 
-*build\_chroot* \- installation of the rest of the components required to start the system
+- Codeblocks, un IDE para programar C/C++  
 
-*build\_live* \- build squashfs image
+### modulo 06-04  
 
-*build\_modules\_chroot* \- building modules
+- OpenJRE,  OpenJDK Java runtime
+- NetBeans, IDE para programar en Java
 
-*build\_iso* \- build the final ISO image
+### modulo 06-05  
 
-**Syntax:** `./install [start_cmd] [-] [end_cmd]`
+- DBeaver, Cliente para administración de bases de datos (SQL)  
+- SWI-Prolog, para lenguaje de programación Prolog.  
 
-* launch from start\_cmd to end\_cmd
-* if start\_cmd is omitted, all commands are executed starting from the first
-* if end\_cmd is omitted, all commands up to the last are executed
-* enter one command to run a specific command
-* enter '-' as the only argument to run all commands
+### Modulos Extras  
 
-```
-  Examples: ./install -
-            ./install build_bootstrap - build_chroot
-            ./install - build_chroot
-            ./install build_bootstrap -
-            ./install build_iso
-```
+Algunos modulos contienen herramientas complementarias para otras materias como Sistema de Información:  
 
-If you want to just build the system from the beginning just edit `linux-live/buildconfig` and run `./install -`
+- Docker, para desplegar sus proyectos de manera mas eficiente
+- Virt-Manager, Virtualización de Sistemas Operativos
 
-To build with docker, create a build folder in your home folder, put `minios-live` there, `cd` to `docker` folder and run `01-runme.sh`. This action will install the required programs and create an image. To start the build, edit for yourself and run `02-build.sh`. Sample file content:
-`docker run --rm -it --name mlc --privileged -v /home/user/build:/build local/mlc install -`
-or you can use the `minios-live/batch-build` script by editing the necessary parameters for yourself instead of `02-runme.sh`.
 
-Author: crims0n [https://minios.dev](https://minios.dev)
+### Como usar  
+
+
+
+    user@localhost:~$ sudo ./install -
+    cd build/iso/  
+    [ISOS creadas]
+
+
+
+## Importante
+Este repositorio es un fork del proyecto original [MiniOS Linux](https://github.com/minios-linux/)  
+
+
+
+Repositorio original :  (GitHub)
+Autor original: [crim50n](https://github.com/crim50n) (GitHub)
+
+
+[Guía basica de minios-live (español)](https://proyectos.nucleolinux.org/minunux-linux/minios-minunux/src/branch/master/GUIDE.md)
