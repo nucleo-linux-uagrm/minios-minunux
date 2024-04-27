@@ -1,15 +1,17 @@
 # minios-minunux  
 
-Este proyecto permite crear una ISO arrancable con base MiniOS. Minunux contiene un kit de herramientas para el uso académico de los estudiantes de la [Facultad de Ingeniería en Ciencias de la Computación y Telecomunicaciones (FICCT)](https://www.uagrm.edu.bo/facultades/ficct).
+Este proyecto de "minios-minunux" permite crear una ISO arrancable con base MiniOS. Minunux contiene un kit de herramientas para el uso académico de los estudiantes de la [Facultad de Ingeniería en Ciencias de la Computación y Telecomunicaciones (FICCT)](https://www.uagrm.edu.bo/facultades/ficct).
 
-Este proyecto nace como una "edición no oficial" de MiniOS.
+Desde Bolivia, este proyecto nace como una "edición no oficial" de MiniOS.
 
+### Descarga
+
+Google Drive: [MiniOS Minunux (3GB)](https://drive.google.com/drive/folders/19-buYMEPTkR1PszPLz8qNunSbVpjPra6?usp=sharing)
 ### ¿Por qué elegimos MiniOS como base?
 
 Creemos que las tecnologías FOSS nos dan oportunidades de aprender cuando tenemos acceso al Código Fuente. MiniOS es un claro ejemplo de un proyecto que permite a los demás usuarios aprender de él y mejorarlo con contribuciones, y usar estas tecnologías para ofrecer soluciones libres.
 
-
-### Cómo usar  
+### Cómo usar minios-minunux  
 
 Si desea construir MiniOS Minunux, los pasos son simples, ya que este proyecto fue reescrito con todos los cambios añadidos. Se recomienda usar un Debian 12 o un Ubuntu 22.04 LTS para la construcción:  
 
