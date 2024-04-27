@@ -34,10 +34,7 @@ Esta construcción cuenta con módulos importantes que están destinados para el
     06-03-minunux-amd64-zstd.sb  
     06-04-minunux-amd64-zstd.sb  
     06-05-minunux-amd64-zstd.sb  
-
-## Características  
-
-Esta construcción cuenta con módulos importantes que están destinados para el uso del estudiante universitario por semestre:  
+  
 
 ### Módulo 06-00  
 
