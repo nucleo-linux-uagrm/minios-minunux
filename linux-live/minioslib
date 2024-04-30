@@ -1881,8 +1881,14 @@ function build_iso() {
         fi
     fi
 
-    echo ">>> $ISO created"
+# Create Checksum using MD5
+md5sum $ISO > $ISO.md5
 
+
+    echo ">>> $ISO created"
+    echo ">>> $ISO.md5 created"
+
+    
     if [ $BUILD_TEST_ISO = "true" ]; then
         if [ -L $ISO_DIR/$LIVEKITNAME.iso ]; then
             rm $ISO_DIR/$LIVEKITNAME.iso
