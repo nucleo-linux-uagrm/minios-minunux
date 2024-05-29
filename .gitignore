@@ -1,0 +1,13 @@
+*.deb
+*.gz
+*.iso
+*.xz
+*.tmp
+.install_dir
+build/
+container_buildconfig
+container_config
+linux-live/initramfs/livekit-mos/initramfs.log
+logs
+rootfs/
+aptcache/
