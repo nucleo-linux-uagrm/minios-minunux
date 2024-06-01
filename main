@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+echo $SCRIPT_DIR
+
+. $SCRIPT_DIR/linux-live/localserver || exit 1
+
+echo $SCRIPT_DIR2
+
+# Directorio de repositorio simple
+DIR_SERVER_LOCAL="packages"
+
+# Puerto del repositorio simple, default: 8080
+PORT_SERVER_LOCAL="8080"
+
+
+echo $DIR2
+
+

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e          # exit on error
+set -o pipefail # exit on pipeline error
+set -u          # treat unset variable as error
+
+. /minioslib || exit 1
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+
+# Requirements
+
+pkg update 
+pkg install make gdb -y
+
+# Download Lazarus IDE
+# fpc-laz
+wget -q --show-progress "https://github.com/FershoUno/packages/releases/download/v1.0.0/fpc-laz_3.2.2-210709_amd64.deb"
+
+# fpc-src
+wget -q --show-progress "https://github.com/FershoUno/packages/releases/download/v1.0.0/fpc-src_3.2.2-210709_amd64.deb"
+
+# lazarus-project
+wget -q --show-progress "https://github.com/FershoUno/packages/releases/download/v1.0.0/lazarus-project_3.0.0-0_amd64.deb"
+
+# Installing Lazarus IDE
+pkg update
+pkg install ./fpc-laz_3.2.2-210709_amd64.deb -y
+pkg install ./fpc-src_3.2.2-210709_amd64.deb -y
+pkg install ./lazarus-project_3.0.0-0_amd64.deb -y
+
+# remove downloaded packages
+rm -f fpc-laz_3.2.2-210709_amd64.deb fpc-src_3.2.2-210709_amd64.deb lazarus-project_3.0.0-0_amd64.deb 

@@ -14,8 +14,8 @@ DISTRIBUTION_ARCH="amd64"
 
 # desktop environment
 #
-# [core, flux, xfce, xfce-ultra, xfce-puzzle, xfce-puzzle-base, lxqt] | [xfce-minunux, xfce-minunux-base]
-DESKTOP_ENVIRONMENT="xfce-minunux-base"
+# [core, flux, xfce, xfce-ultra, xfce-puzzle, xfce-puzzle-base, lxqt] | [xfce-minunux, xfce-minunux-base, xfce-minunux-full]
+DESKTOP_ENVIRONMENT="xfce-minunux-full"
 
 # system variant, indicates the used list of packages in modules
 #

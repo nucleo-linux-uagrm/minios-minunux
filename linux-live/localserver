@@ -1,0 +1,29 @@
+#!/bin/bash
+
+
+SCRIPT_DIR2="$(dirname "$(readlink -f "$0")")"
+echo $SCRIPT_DIR2
+DIR_LOCALSERVER=$(pwd)
+
+echo $DIR_LOCALSERVER
+
+
+DIR2=$(dirname "$(realpath "$0")")
+echo $DIR2
+
+
+check_directory(){
+
+if [ -d packages ]; then
+	echo "directory $DIR_SERVER_LOCAL not found"
+	echo "Creating directory $DIR_SERVER_LOCAL"
+	mkdir -p $DIR_SERVER_LOCAL
+fi
+	echo "The directory $DIR_SERVER_LOCAL is already created"
+}
+
+function run_server(){
+
+python3 -m http.server --directory $DIR_SERVER_LOCAL $PORT_SERVER_LOCAL
+
+}

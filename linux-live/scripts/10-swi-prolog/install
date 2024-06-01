@@ -10,8 +10,4 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 
 
 pkg update
-
-# install packages
-if [ -f $SCRIPT_DIR/package.list ]; then
-    install_packages
-fi
+pkg install swi-prolog -y

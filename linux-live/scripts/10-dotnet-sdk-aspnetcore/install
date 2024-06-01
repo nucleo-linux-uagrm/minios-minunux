@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e          # exit on error
+set -o pipefail # exit on pipeline error
+set -u          # treat unset variable as error
+
+. /minioslib || exit 1
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+
+
+pkg update
+# Download and Install 
+wget -q --show-progress  "https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb" -O packages-microsoft-prod.deb
+pkg install ./packages-microsoft-prod.deb
+rm -f packages-microsoft-prod.deb
+
+# Installation SDK-8.0 y ASP.NET Core from repository
+pkg update
+pkg install dotnet-sdk-8.0 aspnetcore-runtime-8.0 -y

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e          # exit on error
+set -o pipefail # exit on pipeline error
+set -u          # treat unset variable as error
+
+. /minioslib || exit 1
+
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+
+
+# Download Pseint
+wget -q --show-progress "https://github.com/FershoUno/packages/releases/download/v1.0.0/pseint-l64-20240122_amd64.deb"
+pkg update
+pkg install ./pseint-l64-20240122_amd64.deb -y
+
+# remove pseint
+rm -f pseint-l64-20240122_amd64.deb
