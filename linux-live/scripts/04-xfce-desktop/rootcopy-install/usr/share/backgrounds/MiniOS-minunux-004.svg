@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1919.9999"
+   width="1920"
    height="1080"
-   viewBox="0 0 1440 810"
+   viewBox="0 0 1440.0001 810"
    version="1.1"
    id="svg1078"
-   sodipodi:docname="MiniOS-minunux-004.svg"
+   sodipodi:docname=" wallpaper-minunux-004-pinguino.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    inkscape:export-filename="/home/daniel/Escritorio/pinguino.png"
    inkscape:export-xdpi="96"
@@ -27,7 +27,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,9 +45,9 @@
      id="namedview1080"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="0.4183054"
-     inkscape:cx="-306.28263"
-     inkscape:cy="178.853"
+     inkscape:zoom="0.24337769"
+     inkscape:cx="-598.07261"
+     inkscape:cy="-254.00066"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -69,7 +69,7 @@
        id="perspective2083" />
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="95.476849 : 466.47686 : 1"
+       inkscape:vp_x="95.47685 : 466.47686 : 1"
        inkscape:vp_y="0 : 999.50153 : 0"
        inkscape:vp_z="1416.5996 : 466.47685 : 1"
        inkscape:persp3d-origin="756.03823 : 331.54414 : 1"
@@ -226,7 +226,7 @@
      xml:space="preserve"
      id="flowRoot1451"
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     transform="matrix(0.75000002,0,0,0.75000002,-4.2685057,551.93304)"><flowRegion
+     transform="matrix(0.75000002,0,0,0.75000002,-4.2685057,551.93305)"><flowRegion
        id="flowRegion1453"><rect
          id="rect1455"
          width="81.213791"
@@ -234,7 +234,8 @@
          x="250.70345"
          y="157.57243" /></flowRegion><flowPara
        id="flowPara1457">M</flowPara></flowRoot>  <g
-     id="g2088">
+     id="g2088"
+     transform="translate(0,1.9458457e-5)">
     <g
        transform="translate(1.8726132,3.7452374)"
        id="g1997">

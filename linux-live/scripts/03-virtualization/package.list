@@ -1,0 +1,9 @@
+qemu-system-x86
+qemu-utils
+libvirt-daemon-system
+uidmap
+#docker.io
+lazydocker
+ipset
+virt-what
+virt-manager

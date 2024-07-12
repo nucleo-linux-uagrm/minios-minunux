@@ -15,7 +15,7 @@ DISTRIBUTION_ARCH="amd64"
 # desktop environment
 #
 # [core, flux, xfce, xfce-ultra, xfce-puzzle, xfce-puzzle-base, lxqt] | [xfce-minunux, xfce-minunux-base, xfce-minunux-full]
-DESKTOP_ENVIRONMENT="xfce-minunux-full"
+DESKTOP_ENVIRONMENT="xfce-minunux-base"
 
 # system variant, indicates the used list of packages in modules
 #
@@ -142,7 +142,7 @@ BUILD_TEST_ISO="true"
 # removes old iso files for this build type
 #
 # [true, false]
-REMOVE_OLD_ISO="false"
+REMOVE_OLD_ISO="true"
 
 # if ="true", creates a copy of minios-live in chroot /opt
 #

@@ -39,7 +39,7 @@ source_install() {
     sed -i "s/uname -m/echo $KERNEL_BUILD_ARCH/g" ./Makefile
     sed -i "s/-v \$(DRIVER_VERSION)/-v \$(DRIVER_VERSION) -k $KERNEL/g" ./Makefile
     sed -i "s/\${kernelver}/$KERNEL/g" ./dkms.conf
-    make
+    make -j$(nproc)
     make install
     cd -
 }

@@ -48,6 +48,7 @@ dnsmasq
 ntpdate
 dvd+rw-tools
 usb-modeswitch
+#pm-utils
 wget
 gnupg
 curl
@@ -78,6 +79,7 @@ lrzip
 lshw
 lzop
 pbzip2
+#clonezilla
 testdisk
 open-vm-tools
 hyperv-daemons
@@ -86,6 +88,17 @@ chntpw
 screen
 nmon
 open-iscsi
+#tgt
+#transmission-cli
+#qemu-system-x86
+#qemu-utils
+#libvirt-daemon-system
+#uidmap
+#docker.io
+#docker-compose
+#lazydocker
+#ipset
+#virt-what
 linux-base
 apt-transport-https
 iputils-ping
@@ -96,4 +109,3 @@ neofetch
 selinux-policy-default
 fuse3
 libfuse2
-iftop
