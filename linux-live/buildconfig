@@ -142,7 +142,7 @@ BUILD_TEST_ISO="true"
 # removes old iso files for this build type
 #
 # [true, false]
-REMOVE_OLD_ISO="true"
+REMOVE_OLD_ISO="false"
 
 # if ="true", creates a copy of minios-live in chroot /opt
 #
